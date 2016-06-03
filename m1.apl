@@ -2,10 +2,12 @@
 
 ⎕IO ← 0
 
-k ← '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz.,?!',"'",'" '
+k ← ∈(⍕¨⍳10) ⎕AV[65+x,32+x←⍳26] ".,?!'" '" '
+
 ∇ x ← p mkI w
 x ← k[(ρk)|(w+k⍳p)]
 ∇
+
 'Strong NE Winds!' mkI 6
 
 ∇ x ← p mkII ws

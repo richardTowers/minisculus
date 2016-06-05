@@ -36,5 +36,5 @@ build/final.question.json: build/four.answer.json
 	wget --method PUT --body-file $< http://minisculuschallenge.com/4baecf8ca3f98dc13eeecbac263cd3ed -O $@
 
 build/final.answer: build/final.question.json
-	jq '.code' -r $< | ./questions/final.apl -- 7 2 > $@
+	jq '.code' -r $< | ./questions/final.apl -- BUNKER > $@
 

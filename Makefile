@@ -1,4 +1,5 @@
-GETQUESTION = grep -o '"question":[^,}]\+' $< | cut -d: -f2 | sed -e 's/^"//' -e 's/"$$//' -e 's/\\"/"/g'
+GETQUESTION = jq '.question' -r $<
+GETCODE = jq '.code' -r $<
 
 build:
 	mkdir -p $@
@@ -30,7 +31,10 @@ build/four.answer.json: build/four.question.json
 build/final.question.json: build/four.answer.json
 	wget --method PUT --body-file $< http://minisculuschallenge.com/4baecf8ca3f98dc13eeecbac263cd3ed -O $@
 
-all: build/final.question.json
+build/final.answer.json: build/final.question.json
+	$(GETCODE) | echo "{\"answer\":\"$$(./questions/final.apl -- 7 2 | sed 's/\"/\\"/g')\"}" > $@
+
+all: build/final.answer.json
 
 clean:
 	rm -rf build

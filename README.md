@@ -1,7 +1,7 @@
 Minisculus
 ===============
 
-Minisculus is a a coding challenge loosely based on the historic efforts of the WWII code breakers. http://minisculuschallenge.com/
+Minisculus is a a coding challenge loosely based on [the historic efforts](http://i.imgur.com/kXEEIx4.gifv) of the WWII code breakers. http://minisculuschallenge.com/
 
 This repo contains my solutions to the challenges in [APL](https://en.wikipedia.org/wiki/APL_(programming_language)).
 
